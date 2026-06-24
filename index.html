@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikos Karamoustos — Data & Insights Analyst</title>
+<meta name="description" content="Data & Insights Analyst and Information Designer. I turn survey and FMCG data into clear, executive-ready insights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16243A;        /* deep ink blue */
+    --ink-soft:#3A4A63;
+    --paper:#FBFAF7;      /* warm paper white */
+    --line:#E4E0D7;
+    --signal:#E8623B;     /* signal orange — data emphasis only */
+    --signal-soft:#FBEAE3;
+    --muted:#6B7383;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);
+    line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  a{color:inherit}
+
+  /* ---- NAV ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.85);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+  .navlinks{display:flex;gap:26px;font-size:.86rem;font-weight:500}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
+  .navlinks a:hover{color:var(--signal)}
+  .navlinks .cv-link{color:var(--signal)}
+  @media(max-width:620px){.navlinks{display:none}}
+
+  /* ---- HERO ---- */
+  header{padding:84px 0 64px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--signal);margin-bottom:22px}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.4rem,6vw,4rem);
+    line-height:1.04;letter-spacing:-.02em;max-width:14ch;margin-bottom:26px}
+  h1 .hl{position:relative;white-space:nowrap}
+  h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.42em;
+    background:var(--signal-soft);z-index:-1;border-radius:2px}
+  .lede{font-size:1.16rem;color:var(--ink-soft);max-width:52ch;margin-bottom:34px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:7px;
+    font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .15s,box-shadow .2s}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(22,36,58,.22)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink)}
+
+  /* ---- STAT STRIP (career as data) ---- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:54px;
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .stat{padding:22px 24px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;line-height:1}
+  .stat .num .u{color:var(--signal)}
+  .stat .lab{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.35}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ---- SECTION SHELL ---- */
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:38px}
+  .sec-num{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--signal);padding-top:6px}
+  .sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.6rem,3.5vw,2.2rem);
+    letter-spacing:-.01em}
+  .sec-sub{color:var(--muted);font-size:.95rem;margin-top:4px;max-width:54ch}
+
+  /* ---- WORK CARDS ---- */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:720px){.work-grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .18s,box-shadow .2s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,36,58,.10)}
+  .card .thumb{height:168px;background:linear-gradient(135deg,#1d3050,#16243A);
+    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .card .thumb.alt{background:linear-gradient(135deg,#E8623B,#c9421d)}
+  .card .thumb .glyph{font-family:'IBM Plex Mono',monospace;color:rgba(255,255,255,.9);
+    font-size:.78rem;letter-spacing:.1em;z-index:2}
+  /* simple decorative bars to read as a chart */
+  .bars{position:absolute;inset:0;display:flex;align-items:flex-end;gap:7px;padding:26px 22px;opacity:.32}
+  .bars span{flex:1;background:#fff;border-radius:2px 2px 0 0}
+  .card .body{padding:22px 22px 24px}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--signal);margin-bottom:9px}
+  .card h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;margin-bottom:8px;line-height:1.25}
+  .card p{font-size:.9rem;color:var(--ink-soft)}
+  .card .soon{margin-top:14px;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  /* ---- ABOUT ---- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:30px}}
+  .about p{font-size:1.05rem;color:var(--ink-soft);margin-bottom:16px;max-width:58ch}
+  .about p .em{color:var(--ink);font-weight:600}
+  .skills-box{background:#fff;border:1px solid var(--line);border-radius:11px;padding:24px}
+  .skills-box h4{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .chip{font-size:.82rem;background:var(--paper);border:1px solid var(--line);
+    padding:5px 11px;border-radius:20px}
+  .chip.key{border-color:var(--signal);color:var(--signal);background:var(--signal-soft)}
+
+  /* ---- CV ---- */
+  .cv{background:#fff;border:1px solid var(--line);border-radius:12px;padding:40px}
+  @media(max-width:620px){.cv{padding:26px 20px}}
+  .cv-top{display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:24px}
+  .cv-top h3{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600}
+  .cv-top .role{color:var(--muted);font-size:.92rem;margin-top:2px}
+  .cv-block{margin-bottom:26px}
+  .cv-block:last-child{margin-bottom:0}
+  .cv-block .h{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--signal);margin-bottom:14px;
+    border-bottom:1px solid var(--line);padding-bottom:6px}
+  .job{margin-bottom:18px}
+  .job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+  .job-top .t{font-weight:600;font-size:.97rem}
+  .job-top .d{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--muted)}
+  .job ul{margin:8px 0 0;padding-left:18px}
+  .job li{font-size:.9rem;color:var(--ink-soft);margin-bottom:5px}
+  .cv-skills{font-size:.9rem;color:var(--ink-soft);line-height:1.9}
+  .cv-skills b{color:var(--ink)}
+  .edu-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;
+    font-size:.9rem;margin-bottom:8px}
+  .edu-row b{font-weight:600}
+  .edu-row span{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+
+  /* ---- CONTACT / FOOTER ---- */
+  footer{padding:70px 0 60px;text-align:center}
+  footer .big{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:500;margin-bottom:18px;letter-spacing:-.01em}
+  footer a.mail{color:var(--signal);text-decoration:none;border-bottom:2px solid var(--signal-soft)}
+  footer a.mail:hover{border-color:var(--signal)}
+  .foot-links{display:flex;gap:20px;justify-content:center;margin-top:26px;font-size:.88rem}
+  .foot-links a{color:var(--ink-soft);text-decoration:none}
+  .foot-links a:hover{color:var(--signal)}
+  .copyright{margin-top:40px;font-size:.78rem;color:var(--muted);
+    font-family:'IBM Plex Mono',monospace}
+
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+  /* reveal — gated on .js so content is never stuck hidden if JS fails */
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Nikos Karamoustos</span>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#cv" class="cv-link">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Data &amp; Insights Analyst · Information Designer</div>
+    <h1>I turn raw data into <span class="hl">insight people act on</span>.</h1>
+    <p class="lede">Three years turning consumer survey and FMCG tracking data into clear, executive-ready reports — backed by a graphic-design background that makes the findings land in seconds, not slides.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">See the work →</a>
+      <a href="Nikos_Karamoustos_CV.pdf" class="btn btn-ghost" download>↓ Download CV (PDF)</a>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">3<span class="u">+</span></div><div class="lab">Years in consumer insights</div></div>
+      <div class="stat"><div class="num">20<span class="u">+</span></div><div class="lab">FMCG clients served</div></div>
+      <div class="stat"><div class="num">4</div><div class="lab">International markets</div></div>
+      <div class="stat"><div class="num">~50<span class="u">%</span></div><div class="lab">Faster reporting via templates I built</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <div>
+        <div class="sec-title">Selected work</div>
+        <div class="sec-sub">Each piece shows the same thing from a different angle: messy data in, a clear decision out.</div>
+      </div>
+    </div>
+    <div class="work-grid">
+
+      <article class="card reveal">
+        <div class="thumb">
+          <div class="bars"><span style="height:40%"></span><span style="height:62%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:67%"></span></div>
+          <span class="glyph">FLAGSHIP · EUROBAROMETER</span>
+        </div>
+        <div class="body">
+          <div class="tag">Consumer Insights Report</div>
+          <h3>What Europeans really think about the energy transition</h3>
+          <p>A full insights pipeline on public EU survey data — SQL to pull and segment, analysis for the signal, and a designed deck that turns it into a clear story for a non-technical reader.</p>
+          <p class="soon">In progress — live shortly.</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="thumb alt">
+          <div class="bars"><span style="height:70%"></span><span style="height:45%"></span><span style="height:85%"></span><span style="height:30%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:75%"></span></div>
+          <span class="glyph">SERIES · CHART REDESIGN</span>
+        </div>
+        <div class="body">
+          <div class="tag">Good Chart / Bad Chart</div>
+          <h3>Before &amp; after: rescuing real-world charts</h3>
+          <p>A running series taking confusing published charts and rebuilding them so the point is obvious — the everyday craft of making data legible.</p>
+          <p class="soon">In progress — live shortly.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <div><div class="sec-title">About</div></div>
+    </div>
+    <div class="about-grid">
+      <div class="about">
+        <p>Most analysts can crunch the numbers. Most designers can make things look good. <span class="em">I sit in the gap between the two</span> — which is exactly where insight either reaches a decision-maker or dies in a spreadsheet.</p>
+        <p>At Braincandy I run survey and FMCG tracking studies end to end — quota management, wave-over-wave validation, significance testing — then design the decks that 20+ clients actually use to make calls. The graphic-design background isn't decoration; it's what gets a finding understood in three seconds.</p>
+        <p>I work remotely across EU time zones, and I'm equally at home on commercial consumer-insights work and on environmental / sustainability research, where my MSc in Conservation gives me the domain language.</p>
+      </div>
+      <div class="skills-box reveal">
+        <h4>Core toolkit</h4>
+        <div class="chips">
+          <span class="chip key">SQL</span>
+          <span class="chip key">Python (Pandas)</span>
+          <span class="chip key">Advanced Excel</span>
+          <span class="chip">Significance testing</span>
+          <span class="chip">Segmentation</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Tableau</span>
+        </div>
+        <h4>Design &amp; communication</h4>
+        <div class="chips">
+          <span class="chip">Data storytelling</span>
+          <span class="chip">Dashboard design</span>
+          <span class="chip">Illustrator</span>
+          <span class="chip">InDesign</span>
+          <span class="chip">Figma</span>
+          <span class="chip">PowerPoint / Keynote</span>
+        </div>
+        <h4>Languages</h4>
+        <div class="chips">
+          <span class="chip">Greek — native</span>
+          <span class="chip">English — fluent</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <div>
+        <div class="sec-title">Curriculum vitae</div>
+        <div class="sec-sub">The short version is above. Here's the full record — or grab the PDF.</div>
+      </div>
+    </div>
+
+    <div class="cv">
+      <div class="cv-top">
+        <div>
+          <h3>Nikos Karamoustos</h3>
+          <div class="role">Data &amp; Insights Analyst · Consumer Insights · Survey Analytics</div>
+        </div>
+        <a href="Nikos_Karamoustos_CV.pdf" class="btn btn-primary" download style="padding:10px 18px;font-size:.85rem">↓ Download PDF</a>
+      </div>
+
+      <div class="cv-block">
+        <div class="h">Experience</div>
+
+        <div class="job">
+          <div class="job-top"><span class="t">Data &amp; Insights Analyst / Information Designer — Braincandy</span><span class="d">Apr 2023 – Present</span></div>
+          <ul>
+            <li>Designed and delivered research decks for 20+ major FMCG clients, translating raw survey data (up to 1,200 respondents per wave) into actionable insights for executives.</li>
+            <li>Directed survey operations and panel quotas across 4 international markets with 100% on-time delivery and strict data integrity.</li>
+            <li>Built standardized visual frameworks and templates that cut reporting time by ~50% and improved consistency across teams.</li>
+            <li>Ran wave-over-wave statistical validation and significance testing to support strategic recommendations.</li>
+            <li>Mentored junior analysts on data-visualization best practice, reducing QA errors.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top"><span class="t">Research Analyst — Hellenic Foundation for Research &amp; Innovation (ELIDEK)</span><span class="d">Nov 2021 – Jan 2022</span></div>
+          <ul>
+            <li>Processed geospatial and environmental datasets in Python for research on Natura 2000 areas; designed maps and charts for non-technical partners and scientific committees.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top"><span class="t">Data Analyst — Callisto NGO (Volunteer)</span><span class="d">Sep 2021 – Oct 2021</span></div>
+          <ul>
+            <li>Cleaned and structured wildlife-observation data for the Life Arcprom A2 brown bear study, and built visual reports guiding habitat-protection priorities.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top"><span class="t">Data Entry Specialist — Hellenic Statistical Authority (ELSTAT)</span><span class="d">Jan 2015</span></div>
+          <ul>
+            <li>Audited and maintained large-scale agricultural datasets to national statistical standards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <div class="h">Skills &amp; tools</div>
+        <div class="cv-skills">
+          <b>Domain:</b> Consumer Insights, Survey &amp; Tracking Studies, FMCG Research, Panel &amp; Quota Management, Stakeholder Reporting<br>
+          <b>Data:</b> SQL (BigQuery, PostgreSQL), Python (Pandas, Matplotlib), Advanced Excel, Descriptive Statistics, Segmentation, Significance Testing<br>
+          <b>Visualization &amp; BI:</b> Data Storytelling, Dashboard &amp; Chart Design, Executive Reporting; Power BI, Tableau (familiar)<br>
+          <b>Communication:</b> PowerPoint, Keynote, Adobe Illustrator, InDesign, Figma, Information Design
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <div class="h">Graphic design background</div>
+        <div class="cv-skills">
+          Freelance Graphic Designer (2020–22 &amp; 2014–16) · Graphic Designer, Exalco S.A. / Biokarpet (2018–20) · Design Intern, The Smalls Larissa (2016–17). Branding, layout, typography, print &amp; digital communication.
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <div class="h">Education</div>
+        <div class="edu-row"><b>MSc, Management in Conservation &amp; Biological Resources</b><span>AUTh · 2022</span></div>
+        <div class="edu-row"><b>BA &amp; Integrated MSc, Economics of Agriculture</b><span>AUTh · 2013</span></div>
+        <div class="edu-row"><b>BA, Graphic Design</b><span>1st IEK Larissa · 2015</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="big">Let's make your data make sense.</div>
+    <p style="color:var(--ink-soft)">Open to remote roles across EU time zones — commercial insights and sustainability work alike.</p>
+    <p style="margin-top:18px;font-size:1.1rem"><a href="mailto:nikoskaramou@gmail.com" class="mail">nikoskaramou@gmail.com</a></p>
+    <div class="foot-links">
+      <a href="https://linkedin.com/in/nikoskaramoustos/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="Nikos_Karamoustos_CV.pdf" download>Download CV ↓</a>
+    </div>
+    <div class="copyright">© 2026 Nikos Karamoustos · Built &amp; designed by me</div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.className='js';
+  const els=document.querySelectorAll('.reveal');
+  const show=el=>el.classList.add('in');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(el=>io.observe(el));
+    // safety net: reveal anything still hidden shortly after load
+    window.addEventListener('load',()=>setTimeout(()=>els.forEach(show),800));
+  } else { els.forEach(show); }
+</script>
+</body>
+</html>

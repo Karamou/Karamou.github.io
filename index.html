@@ -3,383 +3,412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nikos Karamoustos — Data & Insights Analyst</title>
+<title>Nikos Karamoustos — Data &amp; Insights Analyst</title>
 <meta name="description" content="Data & Insights Analyst and Information Designer. I turn survey and FMCG data into clear, executive-ready insights.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#16243A;        /* deep ink blue */
-    --ink-soft:#3A4A63;
-    --paper:#FBFAF7;      /* warm paper white */
-    --line:#E4E0D7;
-    --signal:#E8623B;     /* signal orange — data emphasis only */
-    --signal-soft:#FBEAE3;
-    --muted:#6B7383;
-    --max:1080px;
+    --canvas:#EFEDE7;
+    --tile:#FBFAF8;
+    --ink:#1A1C1E;
+    --ink-2:#2C3034;
+    --soft:#5C6066;
+    --muted:#8A8E94;
+    --line:#DDD9D0;
+    --line-2:#E8E5DE;
+    --accent:#3A5BFF;
+    --accent-ink:#23234A;
+    --accent-soft:#E6E9FF;
+    --max:1140px;
+    --r:18px;
+    --gap:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);
-    line-height:1.6;-webkit-font-smoothing:antialiased;
+    font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--canvas);
+    line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   }
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:22px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
 
-  /* ---- NAV ---- */
-  nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.85);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
-  .navlinks{display:flex;gap:26px;font-size:.86rem;font-weight:500}
-  .navlinks a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
-  .navlinks a:hover{color:var(--signal)}
-  .navlinks .cv-link{color:var(--signal)}
-  @media(max-width:620px){.navlinks{display:none}}
+  /* TOP BAR */
+  .topbar{display:flex;align-items:center;justify-content:space-between;
+    padding:6px 4px 22px;gap:18px;flex-wrap:wrap}
+  .id{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;
+    font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
+  .id .sig{width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--canvas);
+    display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:.82rem;flex:none}
+  .status{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;
+    font-size:.72rem;letter-spacing:.04em;color:var(--soft);text-transform:uppercase}
+  .status .led{width:7px;height:7px;border-radius:50%;background:#1FB873;
+    box-shadow:0 0 0 0 rgba(31,184,115,.5);animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(31,184,115,.5)}70%{box-shadow:0 0 0 7px rgba(31,184,115,0)}100%{box-shadow:0 0 0 0 rgba(31,184,115,0)}}
 
-  /* ---- HERO ---- */
-  header{padding:84px 0 64px;border-bottom:1px solid var(--line)}
-  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--signal);margin-bottom:22px}
-  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.4rem,6vw,4rem);
-    line-height:1.04;letter-spacing:-.02em;max-width:14ch;margin-bottom:26px}
-  h1 .hl{position:relative;white-space:nowrap}
-  h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.42em;
-    background:var(--signal-soft);z-index:-1;border-radius:2px}
-  .lede{font-size:1.16rem;color:var(--ink-soft);max-width:52ch;margin-bottom:34px}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:7px;
-    font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .15s,box-shadow .2s}
-  .btn-primary{background:var(--ink);color:var(--paper)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(22,36,58,.22)}
-  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
-  .btn-ghost:hover{border-color:var(--ink)}
+  /* BENTO GRID */
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(10px,auto);gap:var(--gap)}
+  .tile{background:var(--tile);border:1px solid var(--line);border-radius:var(--r);
+    padding:26px;position:relative;display:flex;flex-direction:column;
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,border-color .22s}
+  .tile:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(26,28,30,.09);border-color:#cfcabf}
+  .tile .corner{position:absolute;top:16px;right:18px;font-family:'Space Mono',monospace;
+    font-size:.66rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
 
-  /* ---- STAT STRIP (career as data) ---- */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:54px;
-    border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-  .stat{padding:22px 24px;border-right:1px solid var(--line)}
-  .stat:last-child{border-right:none}
-  .stat .num{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;line-height:1}
-  .stat .num .u{color:var(--signal)}
-  .stat .lab{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.35}
-  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+  .c7{grid-column:span 7}.c5{grid-column:span 5}
 
-  /* ---- SECTION SHELL ---- */
-  section{padding:72px 0;border-bottom:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:38px}
-  .sec-num{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--signal);padding-top:6px}
-  .sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.6rem,3.5vw,2.2rem);
-    letter-spacing:-.01em}
-  .sec-sub{color:var(--muted);font-size:.95rem;margin-top:4px;max-width:54ch}
+  /* HERO */
+  .hero{grid-column:span 8;background:var(--ink);color:var(--canvas);border-color:var(--ink);
+    overflow:hidden;min-height:300px;justify-content:flex-end}
+  .hero:hover{border-color:var(--ink)}
+  .hero .grid-bg{position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:34px 34px;-webkit-mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 75%);
+    mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 75%)}
+  .hero .role{position:relative;font-family:'Space Mono',monospace;font-size:.74rem;
+    letter-spacing:.12em;text-transform:uppercase;color:#9aa0ff;margin-bottom:18px}
+  .hero h1{position:relative;font-family:'Space Grotesk',sans-serif;font-weight:500;
+    font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.025em;max-width:18ch}
+  .hero h1 .u{position:relative;white-space:nowrap}
+  .hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.5em;
+    background:var(--accent);z-index:-1;opacity:.9;border-radius:2px}
+  .hero p{position:relative;font-size:1.04rem;color:#c8cace;max-width:50ch;margin-top:20px}
 
-  /* ---- WORK CARDS ---- */
-  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media(max-width:720px){.work-grid{grid-template-columns:1fr}}
-  .card{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;
-    display:flex;flex-direction:column;transition:transform .18s,box-shadow .2s}
-  .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,36,58,.10)}
-  .card .thumb{height:168px;background:linear-gradient(135deg,#1d3050,#16243A);
-    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-  .card .thumb.alt{background:linear-gradient(135deg,#E8623B,#c9421d)}
-  .card .thumb .glyph{font-family:'IBM Plex Mono',monospace;color:rgba(255,255,255,.9);
-    font-size:.78rem;letter-spacing:.1em;z-index:2}
-  /* simple decorative bars to read as a chart */
-  .bars{position:absolute;inset:0;display:flex;align-items:flex-end;gap:7px;padding:26px 22px;opacity:.32}
-  .bars span{flex:1;background:#fff;border-radius:2px 2px 0 0}
-  .card .body{padding:22px 22px 24px}
-  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--signal);margin-bottom:9px}
-  .card h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;margin-bottom:8px;line-height:1.25}
-  .card p{font-size:.9rem;color:var(--ink-soft)}
-  .card .soon{margin-top:14px;font-size:.78rem;color:var(--muted);font-style:italic}
-  .card-links{display:flex;gap:18px;margin-top:15px}
-  .card-links a{font-size:.85rem;font-weight:600;color:var(--signal);text-decoration:none;
-    border-bottom:1.5px solid var(--signal-soft);transition:border-color .2s}
-  .card-links a:hover{border-color:var(--signal)}
+  /* CV CTA — centerpiece */
+  .cv-cta{grid-column:span 4;background:var(--accent);color:#fff;border-color:var(--accent);
+    justify-content:space-between;overflow:hidden;min-height:300px}
+  .cv-cta:hover{border-color:var(--accent);box-shadow:0 16px 40px rgba(58,91,255,.32)}
+  .cv-cta .corner{color:rgba(255,255,255,.6)}
+  .cv-cta .doc{position:absolute;right:-26px;top:34px;width:130px;height:168px;background:#fff;
+    border-radius:8px;transform:rotate(8deg);box-shadow:0 14px 34px rgba(0,0,0,.22);opacity:.96}
+  .cv-cta .doc::before{content:"";position:absolute;left:16px;right:16px;top:20px;height:7px;
+    background:var(--accent-soft);border-radius:3px;
+    box-shadow:0 16px 0 var(--accent-soft),0 32px 0 var(--accent-soft),0 48px 0 #eee,0 64px 0 #eee,0 80px 0 #eee}
+  .cv-cta .lab{position:relative;font-family:'Space Grotesk';font-weight:600;
+    font-size:1.5rem;letter-spacing:-.02em;max-width:8ch;margin-top:8px}
+  .cv-cta .dl{position:relative;display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+    background:#fff;color:var(--accent-ink);font-weight:600;font-size:.92rem;
+    padding:12px 20px;border-radius:11px;transition:transform .18s,gap .18s}
+  .cv-cta .dl:hover{transform:translateY(-2px);gap:13px}
+  .cv-cta .meta{position:relative;font-family:'Space Mono',monospace;font-size:.68rem;
+    letter-spacing:.06em;color:rgba(255,255,255,.7);margin-top:14px}
 
-  /* ---- ABOUT ---- */
-  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
-  @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:30px}}
-  .about p{font-size:1.05rem;color:var(--ink-soft);margin-bottom:16px;max-width:58ch}
-  .about p .em{color:var(--ink);font-weight:600}
-  .skills-box{background:#fff;border:1px solid var(--line);border-radius:11px;padding:24px}
-  .skills-box h4{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .chip{font-size:.82rem;background:var(--paper);border:1px solid var(--line);
-    padding:5px 11px;border-radius:20px}
-  .chip.key{border-color:var(--signal);color:var(--signal);background:var(--signal-soft)}
+  /* STAT TILES */
+  .stat{grid-column:span 3;padding:22px 24px;justify-content:flex-end;min-height:128px}
+  .stat .num{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.5rem;
+    line-height:1;letter-spacing:-.03em}
+  .stat .num .u{color:var(--accent)}
+  .stat .lab{font-size:.82rem;color:var(--soft);margin-top:9px;line-height:1.35}
+  .stat .spark{position:absolute;top:20px;left:24px;right:24px;height:26px;display:flex;
+    align-items:flex-end;gap:4px;opacity:.5}
+  .stat .spark span{flex:1;background:var(--accent);border-radius:2px 2px 0 0;opacity:.55}
 
-  /* ---- CV ---- */
-  .cv{background:#fff;border:1px solid var(--line);border-radius:12px;padding:40px}
-  @media(max-width:620px){.cv{padding:26px 20px}}
-  .cv-top{display:flex;justify-content:space-between;align-items:flex-start;
-    flex-wrap:wrap;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:24px}
-  .cv-top h3{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600}
-  .cv-top .role{color:var(--muted);font-size:.92rem;margin-top:2px}
-  .cv-block{margin-bottom:26px}
-  .cv-block:last-child{margin-bottom:0}
-  .cv-block .h{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--signal);margin-bottom:14px;
-    border-bottom:1px solid var(--line);padding-bottom:6px}
-  .job{margin-bottom:18px}
-  .job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
-  .job-top .t{font-weight:600;font-size:.97rem}
-  .job-top .d{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--muted)}
+  /* WORK TILES */
+  .work .corner{color:var(--muted)}
+  .work .tag{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .work h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.28rem;
+    letter-spacing:-.015em;line-height:1.22;margin-bottom:10px}
+  .work p{font-size:.92rem;color:var(--soft);flex:1}
+  .work .links{display:flex;gap:18px;margin-top:18px}
+  .work .links a{font-size:.86rem;font-weight:600;color:var(--accent);
+    display:inline-flex;align-items:center;gap:5px;transition:gap .18s}
+  .work .links a:hover{gap:9px}
+  .work .soon{margin-top:16px;font-family:'Space Mono',monospace;font-size:.72rem;
+    color:var(--muted);letter-spacing:.04em}
+  .work .chartface{height:84px;margin:-4px 0 18px;display:flex;align-items:flex-end;gap:6px}
+  .work .chartface span{flex:1;background:var(--line);border-radius:3px 3px 0 0;transition:background .2s}
+  .work:hover .chartface span{background:var(--accent-soft)}
+  .work .chartface span.hi{background:var(--accent)}
+
+  /* ABOUT */
+  .about{justify-content:center}
+  .about .corner{color:var(--muted)}
+  .about h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;
+    letter-spacing:.02em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .about p{font-size:1.04rem;color:var(--ink-2);margin-bottom:14px;max-width:60ch}
+  .about p:last-child{margin-bottom:0}
+  .about .em{color:var(--ink);font-weight:600;box-shadow:inset 0 -.45em 0 var(--accent-soft)}
+
+  /* SKILLS */
+  .skills h2{font-family:'Space Grotesk';font-weight:600;font-size:1.05rem;letter-spacing:.02em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .skills .grp{margin-bottom:16px}
+  .skills .grp:last-child{margin-bottom:0}
+  .skills .glab{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:.82rem;font-weight:500;background:var(--canvas);border:1px solid var(--line);
+    padding:5px 11px;border-radius:8px;color:var(--soft)}
+  .chip.key{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft);font-weight:600}
+
+  /* FULL CV */
+  .cvfull{grid-column:span 12}
+  .cvfull .cvhead{display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:16px;padding-bottom:20px;margin-bottom:8px;border-bottom:2px solid var(--ink)}
+  .cvfull .cvhead h2{font-family:'Space Grotesk';font-weight:600;font-size:1.55rem;letter-spacing:-.01em}
+  .cvfull .cvhead .role{color:var(--muted);font-size:.9rem;margin-top:3px}
+  .cvfull .dl-sm{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--canvas);
+    padding:10px 18px;border-radius:10px;font-weight:600;font-size:.85rem;transition:background .2s,transform .18s}
+  .cvfull .dl-sm:hover{background:var(--accent);transform:translateY(-2px)}
+  .cvcols{display:grid;grid-template-columns:1.7fr 1fr;gap:40px;margin-top:24px}
+  @media(max-width:760px){.cvcols{grid-template-columns:1fr;gap:28px}}
+  .blk{margin-bottom:26px}.blk:last-child{margin-bottom:0}
+  .blk .bh{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px;
+    border-bottom:1px solid var(--line);padding-bottom:7px}
+  .job{margin-bottom:18px}.job:last-child{margin-bottom:0}
+  .job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;align-items:baseline}
+  .job-top .t{font-weight:600;font-size:.95rem}
+  .job-top .d{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--muted);white-space:nowrap}
   .job ul{margin:8px 0 0;padding-left:18px}
-  .job li{font-size:.9rem;color:var(--ink-soft);margin-bottom:5px}
-  .cv-skills{font-size:.9rem;color:var(--ink-soft);line-height:1.9}
-  .cv-skills b{color:var(--ink)}
-  .edu-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;
-    font-size:.9rem;margin-bottom:8px}
-  .edu-row b{font-weight:600}
-  .edu-row span{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+  .job li{font-size:.89rem;color:var(--soft);margin-bottom:5px}
+  .job li::marker{color:var(--accent)}
+  .kv{font-size:.89rem;color:var(--soft);line-height:1.85}
+  .kv b{color:var(--ink);font-weight:600}
+  .edu{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:.89rem;
+    margin-bottom:9px;align-items:baseline}
+  .edu b{font-weight:600}
+  .edu span{color:var(--muted);font-family:'Space Mono',monospace;font-size:.72rem;white-space:nowrap}
 
-  /* ---- CONTACT / FOOTER ---- */
-  footer{padding:70px 0 60px;text-align:center}
-  footer .big{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);
-    font-weight:500;margin-bottom:18px;letter-spacing:-.01em}
-  footer a.mail{color:var(--signal);text-decoration:none;border-bottom:2px solid var(--signal-soft)}
-  footer a.mail:hover{border-color:var(--signal)}
-  .foot-links{display:flex;gap:20px;justify-content:center;margin-top:26px;font-size:.88rem}
-  .foot-links a{color:var(--ink-soft);text-decoration:none}
-  .foot-links a:hover{color:var(--signal)}
-  .copyright{margin-top:40px;font-size:.78rem;color:var(--muted);
-    font-family:'IBM Plex Mono',monospace}
+  /* CONTACT */
+  .contact{grid-column:span 12;background:var(--ink);color:var(--canvas);border-color:var(--ink);
+    flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+  .contact:hover{border-color:var(--ink)}
+  .contact .big{font-family:'Space Grotesk';font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);
+    letter-spacing:-.02em;max-width:18ch}
+  .contact .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .contact .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:11px;
+    font-weight:600;font-size:.92rem;transition:transform .18s,background .2s,border-color .2s}
+  .contact .btn-a{background:var(--accent);color:#fff}
+  .contact .btn-a:hover{transform:translateY(-2px);background:#5a76ff}
+  .contact .btn-b{border:1.5px solid rgba(255,255,255,.25);color:var(--canvas)}
+  .contact .btn-b:hover{border-color:var(--canvas);transform:translateY(-2px)}
 
-  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
-  /* reveal — gated on .js so content is never stuck hidden if JS fails */
-  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-  .js .reveal.in{opacity:1;transform:none}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    padding:24px 6px 8px;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+  .foot a:hover{color:var(--accent)}
+
+  /* RESPONSIVE */
+  @media(max-width:880px){
+    .hero{grid-column:span 12}
+    .cv-cta{grid-column:span 12;min-height:230px}
+    .stat{grid-column:span 6}
+    .work.c7,.work.c5{grid-column:span 6}
+    .about.c7{grid-column:span 12}
+    .skills.c5{grid-column:span 12}
+  }
+  @media(max-width:560px){
+    .wrap{padding:16px}
+    .stat{grid-column:span 6}
+    .work.c7,.work.c5{grid-column:span 12}
+    .tile{padding:22px}
+    .contact{flex-direction:column;align-items:flex-start}
+  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;animation:none!important}}
+  .js .reveal{opacity:0;transform:translateY(14px)}
+  .js .reveal.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+
+  .float{position:fixed;bottom:18px;right:18px;z-index:60;display:none;align-items:center;gap:8px;
+    background:var(--accent);color:#fff;padding:13px 20px;border-radius:30px;font-weight:600;
+    font-size:.9rem;box-shadow:0 10px 28px rgba(58,91,255,.42)}
+  @media(max-width:880px){.float{display:inline-flex}}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<nav>
-  <div class="wrap">
-    <span class="brand">Nikos Karamoustos</span>
-    <div class="navlinks">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#cv" class="cv-link">CV</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <div class="topbar">
+    <div class="id"><span class="sig">NK</span>Nikos Karamoustos</div>
+    <div class="status"><span class="led"></span>Available · Remote · EU time zones</div>
   </div>
-</nav>
 
-<header>
-  <div class="wrap">
-    <div class="eyebrow">Data &amp; Insights Analyst · Information Designer</div>
-    <h1>I turn raw data into <span class="hl">insight people act on</span>.</h1>
-    <p class="lede">Three years turning consumer survey and FMCG tracking data into clear, executive-ready reports — backed by a graphic-design background that makes the findings land in seconds, not slides.</p>
-    <div class="cta-row">
-      <a href="#work" class="btn btn-primary">See the work →</a>
-      <a href="Nikos_Karamoustos_CV.pdf" class="btn btn-ghost" download>↓ Download CV (PDF)</a>
-    </div>
+  <div class="bento">
 
-    <div class="stats reveal">
-      <div class="stat"><div class="num">3<span class="u">+</span></div><div class="lab">Years in consumer insights</div></div>
-      <div class="stat"><div class="num">20<span class="u">+</span></div><div class="lab">FMCG clients served</div></div>
-      <div class="stat"><div class="num">4</div><div class="lab">International markets</div></div>
-      <div class="stat"><div class="num">~50<span class="u">%</span></div><div class="lab">Faster reporting via templates I built</div></div>
-    </div>
-  </div>
-</header>
+    <section class="tile hero reveal">
+      <div class="grid-bg"></div>
+      <div class="role">Data &amp; Insights Analyst · Information Designer</div>
+      <h1>I turn raw data into <span class="u">insight people act on</span>.</h1>
+      <p>Three years turning consumer survey and FMCG tracking data into clear, executive-ready reports — backed by a design background that makes the finding land in seconds, not slides.</p>
+    </section>
 
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">01</span>
+    <a class="tile cv-cta reveal" href="Nikos_Karamoustos_CV.pdf" download>
+      <span class="corner">/ resume.pdf</span>
+      <div class="doc"></div>
+      <div class="lab">Grab the CV</div>
       <div>
-        <div class="sec-title">Selected work</div>
-        <div class="sec-sub">Each piece shows the same thing from a different angle: messy data in, a clear decision out.</div>
+        <span class="dl">↓ Download PDF</span>
+        <div class="meta">PDF · 1 PAGE · UPDATED 2026</div>
       </div>
+    </a>
+
+    <div class="tile stat reveal">
+      <div class="spark"><span style="height:35%"></span><span style="height:55%"></span><span style="height:48%"></span><span style="height:72%"></span><span style="height:90%"></span></div>
+      <div class="num">3<span class="u">+</span></div>
+      <div class="lab">Years in consumer insights</div>
     </div>
-    <div class="work-grid">
-
-      <article class="card reveal">
-        <div class="thumb">
-          <div class="bars"><span style="height:40%"></span><span style="height:62%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:67%"></span></div>
-          <span class="glyph">FLAGSHIP · EUROBAROMETER 566</span>
-        </div>
-        <div class="body">
-          <div class="tag">Consumer Insights Report</div>
-          <h3>Trust, but verify: Europe's energy transition</h3>
-          <p>A full insights pipeline on EU survey microdata (n=18,250) — SQL to segment, weighted analysis, and a designed deck. Headline finding: a 13-point gap between trust in providers (79%) and the market (66%), sharpest in the South.</p>
-          <div class="card-links">
-            <a href="Energy_Transition_Trust_Paradox.pdf" target="_blank" rel="noopener">View deck ↗</a>
-            <a href="Methodology_Energy_Transition.pdf" target="_blank" rel="noopener">Methodology ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="thumb alt">
-          <div class="bars"><span style="height:70%"></span><span style="height:45%"></span><span style="height:85%"></span><span style="height:30%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:75%"></span></div>
-          <span class="glyph">SERIES · CHART REDESIGN</span>
-        </div>
-        <div class="body">
-          <div class="tag">Good Chart / Bad Chart</div>
-          <h3>Before &amp; after: rescuing real-world charts</h3>
-          <p>A running series taking confusing published charts and rebuilding them so the point is obvious — the everyday craft of making data legible.</p>
-          <p class="soon">In progress — live shortly.</p>
-        </div>
-      </article>
-
+    <div class="tile stat reveal">
+      <div class="spark"><span style="height:40%"></span><span style="height:62%"></span><span style="height:75%"></span><span style="height:68%"></span><span style="height:88%"></span></div>
+      <div class="num">20<span class="u">+</span></div>
+      <div class="lab">FMCG clients served</div>
     </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <div><div class="sec-title">About</div></div>
+    <div class="tile stat reveal">
+      <div class="spark"><span style="height:50%"></span><span style="height:50%"></span><span style="height:50%"></span><span style="height:50%"></span></div>
+      <div class="num">4</div>
+      <div class="lab">International markets</div>
     </div>
-    <div class="about-grid">
-      <div class="about">
-        <p>Most analysts can crunch the numbers. Most designers can make things look good. <span class="em">I sit in the gap between the two</span> — which is exactly where insight either reaches a decision-maker or dies in a spreadsheet.</p>
-        <p>At Braincandy I run survey and FMCG tracking studies end to end — quota management, wave-over-wave validation, significance testing — then design the decks that 20+ clients actually use to make calls. The graphic-design background isn't decoration; it's what gets a finding understood in three seconds.</p>
-        <p>I work remotely across EU time zones, and I'm equally at home on commercial consumer-insights work and on environmental / sustainability research, where my MSc in Conservation gives me the domain language.</p>
+    <div class="tile stat reveal">
+      <div class="spark"><span style="height:90%"></span><span style="height:64%"></span><span style="height:50%"></span><span style="height:38%"></span><span style="height:26%"></span></div>
+      <div class="num">~50<span class="u">%</span></div>
+      <div class="lab">Faster reporting via templates I built</div>
+    </div>
+
+    <article class="tile work c7 reveal">
+      <span class="corner">work / 01</span>
+      <div class="chartface">
+        <span style="height:40%"></span><span style="height:62%"></span><span style="height:48%"></span><span class="hi" style="height:78%"></span><span style="height:55%"></span><span class="hi" style="height:92%"></span><span style="height:67%"></span><span style="height:58%"></span><span style="height:71%"></span>
       </div>
-      <div class="skills-box reveal">
-        <h4>Core toolkit</h4>
+      <div class="tag">Consumer Insights Report · Flagship</div>
+      <h3>Trust, but verify: Europe's energy transition</h3>
+      <p>A full insights pipeline on EU survey microdata (n=18,250) — SQL to segment, weighted analysis, a designed deck. Headline: a 13-point gap between trust in providers (79%) and the market (66%), sharpest in the South.</p>
+      <div class="links">
+        <a href="Energy_Transition_Trust_Paradox.pdf" target="_blank" rel="noopener">View deck →</a>
+        <a href="Methodology_Energy_Transition.pdf" target="_blank" rel="noopener">Methodology →</a>
+      </div>
+    </article>
+
+    <article class="tile work c5 reveal">
+      <span class="corner">work / 02</span>
+      <div class="tag">Good Chart / Bad Chart · Series</div>
+      <h3>Before &amp; after: rescuing real-world charts</h3>
+      <p>A running series taking confusing published charts and rebuilding them so the point is obvious — the everyday craft of making data legible.</p>
+      <div class="soon">[ in progress — live shortly ]</div>
+    </article>
+
+    <section class="tile about c7 reveal">
+      <span class="corner">about</span>
+      <h2>Analyst + designer, one person</h2>
+      <p>Most analysts can crunch the numbers. Most designers can make things look good. <span class="em">I sit in the gap between the two</span> — exactly where insight either reaches a decision-maker or dies in a spreadsheet.</p>
+      <p>At Braincandy I run survey and FMCG tracking studies end to end — quotas, wave-over-wave validation, significance testing — then design the decks 20+ clients use to make calls. Equally at home on commercial insights and on environmental research, where my MSc in Conservation gives me the domain language.</p>
+    </section>
+
+    <aside class="tile skills c5 reveal">
+      <h2>Toolkit</h2>
+      <div class="grp">
+        <div class="glab">Core</div>
         <div class="chips">
-          <span class="chip key">SQL</span>
-          <span class="chip key">Python (Pandas)</span>
-          <span class="chip key">Advanced Excel</span>
-          <span class="chip">Significance testing</span>
-          <span class="chip">Segmentation</span>
-          <span class="chip">Power BI</span>
-          <span class="chip">Tableau</span>
-        </div>
-        <h4>Design &amp; communication</h4>
-        <div class="chips">
-          <span class="chip">Data storytelling</span>
-          <span class="chip">Dashboard design</span>
-          <span class="chip">Illustrator</span>
-          <span class="chip">InDesign</span>
-          <span class="chip">Figma</span>
-          <span class="chip">PowerPoint / Keynote</span>
-        </div>
-        <h4>Languages</h4>
-        <div class="chips">
-          <span class="chip">Greek — native</span>
-          <span class="chip">English — fluent</span>
+          <span class="chip key">SQL</span><span class="chip key">Python · Pandas</span>
+          <span class="chip key">Advanced Excel</span><span class="chip">Significance testing</span>
+          <span class="chip">Segmentation</span><span class="chip">Power BI</span><span class="chip">Tableau</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="cv">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">03</span>
-      <div>
-        <div class="sec-title">Curriculum vitae</div>
-        <div class="sec-sub">The short version is above. Here's the full record — or grab the PDF.</div>
+      <div class="grp">
+        <div class="glab">Design &amp; comms</div>
+        <div class="chips">
+          <span class="chip">Data storytelling</span><span class="chip">Dashboards</span>
+          <span class="chip">Illustrator</span><span class="chip">InDesign</span>
+          <span class="chip">Figma</span><span class="chip">Keynote</span>
+        </div>
       </div>
-    </div>
+      <div class="grp">
+        <div class="glab">Languages</div>
+        <div class="chips">
+          <span class="chip">Greek — native</span><span class="chip">English — fluent</span>
+        </div>
+      </div>
+    </aside>
 
-    <div class="cv">
-      <div class="cv-top">
+    <section class="tile cvfull reveal" id="cv">
+      <div class="cvhead">
         <div>
-          <h3>Nikos Karamoustos</h3>
+          <h2>Curriculum vitae</h2>
           <div class="role">Data &amp; Insights Analyst · Consumer Insights · Survey Analytics</div>
         </div>
-        <a href="Nikos_Karamoustos_CV.pdf" class="btn btn-primary" download style="padding:10px 18px;font-size:.85rem">↓ Download PDF</a>
+        <a class="dl-sm" href="Nikos_Karamoustos_CV.pdf" download>↓ Download PDF</a>
       </div>
-
-      <div class="cv-block">
-        <div class="h">Experience</div>
-
-        <div class="job">
-          <div class="job-top"><span class="t">Data &amp; Insights Analyst / Information Designer — Braincandy</span><span class="d">Apr 2023 – Present</span></div>
-          <ul>
-            <li>Designed and delivered research decks for 20+ major FMCG clients, translating raw survey data (up to 1,200 respondents per wave) into actionable insights for executives.</li>
-            <li>Directed survey operations and panel quotas across 4 international markets with 100% on-time delivery and strict data integrity.</li>
-            <li>Built standardized visual frameworks and templates that cut reporting time by ~50% and improved consistency across teams.</li>
-            <li>Ran wave-over-wave statistical validation and significance testing to support strategic recommendations.</li>
-            <li>Mentored junior analysts on data-visualization best practice, reducing QA errors.</li>
-          </ul>
+      <div class="cvcols">
+        <div>
+          <div class="blk">
+            <div class="bh">Experience</div>
+            <div class="job">
+              <div class="job-top"><span class="t">Data &amp; Insights Analyst / Information Designer — Braincandy</span><span class="d">Apr 2023 – Present</span></div>
+              <ul>
+                <li>Designed and delivered research decks for 20+ major FMCG clients, translating raw survey data (up to 1,200 respondents per wave) into actionable insights for executives.</li>
+                <li>Directed survey operations and panel quotas across 4 international markets with 100% on-time delivery and strict data integrity.</li>
+                <li>Built standardized visual frameworks and templates that cut reporting time by ~50% and improved consistency across teams.</li>
+                <li>Ran wave-over-wave statistical validation and significance testing to support strategic recommendations.</li>
+                <li>Mentored junior analysts on data-visualization best practice, reducing QA errors.</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><span class="t">Research Analyst — Hellenic Foundation for Research &amp; Innovation (ELIDEK)</span><span class="d">Nov 2021 – Jan 2022</span></div>
+              <ul><li>Processed geospatial and environmental datasets in Python for research on Natura 2000 areas; designed maps and charts for non-technical partners and scientific committees.</li></ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><span class="t">Data Analyst — Callisto NGO (Volunteer)</span><span class="d">Sep 2021 – Oct 2021</span></div>
+              <ul><li>Cleaned and structured wildlife-observation data for the Life Arcprom A2 brown bear study, and built visual reports guiding habitat-protection priorities.</li></ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><span class="t">Data Entry Specialist — Hellenic Statistical Authority (ELSTAT)</span><span class="d">Jan 2015</span></div>
+              <ul><li>Audited and maintained large-scale agricultural datasets to national statistical standards.</li></ul>
+            </div>
+          </div>
         </div>
-
-        <div class="job">
-          <div class="job-top"><span class="t">Research Analyst — Hellenic Foundation for Research &amp; Innovation (ELIDEK)</span><span class="d">Nov 2021 – Jan 2022</span></div>
-          <ul>
-            <li>Processed geospatial and environmental datasets in Python for research on Natura 2000 areas; designed maps and charts for non-technical partners and scientific committees.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-top"><span class="t">Data Analyst — Callisto NGO (Volunteer)</span><span class="d">Sep 2021 – Oct 2021</span></div>
-          <ul>
-            <li>Cleaned and structured wildlife-observation data for the Life Arcprom A2 brown bear study, and built visual reports guiding habitat-protection priorities.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-top"><span class="t">Data Entry Specialist — Hellenic Statistical Authority (ELSTAT)</span><span class="d">Jan 2015</span></div>
-          <ul>
-            <li>Audited and maintained large-scale agricultural datasets to national statistical standards.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cv-block">
-        <div class="h">Skills &amp; tools</div>
-        <div class="cv-skills">
-          <b>Domain:</b> Consumer Insights, Survey &amp; Tracking Studies, FMCG Research, Panel &amp; Quota Management, Stakeholder Reporting<br>
-          <b>Data:</b> SQL (BigQuery, PostgreSQL), Python (Pandas, Matplotlib), Advanced Excel, Descriptive Statistics, Segmentation, Significance Testing<br>
-          <b>Visualization &amp; BI:</b> Data Storytelling, Dashboard &amp; Chart Design, Executive Reporting; Power BI, Tableau (familiar)<br>
-          <b>Communication:</b> PowerPoint, Keynote, Adobe Illustrator, InDesign, Figma, Information Design
-        </div>
-      </div>
-
-      <div class="cv-block">
-        <div class="h">Graphic design background</div>
-        <div class="cv-skills">
-          Freelance Graphic Designer (2020–22 &amp; 2014–16) · Graphic Designer, Exalco S.A. / Biokarpet (2018–20) · Design Intern, The Smalls Larissa (2016–17). Branding, layout, typography, print &amp; digital communication.
+        <div>
+          <div class="blk">
+            <div class="bh">Skills &amp; tools</div>
+            <div class="kv">
+              <b>Domain:</b> Consumer Insights, Survey &amp; Tracking Studies, FMCG Research, Panel &amp; Quota Management, Stakeholder Reporting<br>
+              <b>Data:</b> SQL (BigQuery, PostgreSQL), Python (Pandas, Matplotlib), Advanced Excel, Descriptive Statistics, Segmentation, Significance Testing<br>
+              <b>Viz &amp; BI:</b> Data Storytelling, Dashboard &amp; Chart Design, Executive Reporting; Power BI, Tableau (familiar)<br>
+              <b>Comms:</b> PowerPoint, Keynote, Illustrator, InDesign, Figma, Information Design
+            </div>
+          </div>
+          <div class="blk">
+            <div class="bh">Design background</div>
+            <div class="kv">Freelance Graphic Designer (2020–22 &amp; 2014–16) · Graphic Designer, Exalco S.A. / Biokarpet (2018–20) · Design Intern, The Smalls Larissa (2016–17). Branding, layout, typography, print &amp; digital.</div>
+          </div>
+          <div class="blk">
+            <div class="bh">Education</div>
+            <div class="edu"><b>MSc, Management in Conservation &amp; Biological Resources</b><span>AUTh · 2022</span></div>
+            <div class="edu"><b>BA &amp; Integrated MSc, Economics of Agriculture</b><span>AUTh · 2013</span></div>
+            <div class="edu"><b>BA, Graphic Design</b><span>1st IEK Larissa · 2015</span></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="cv-block">
-        <div class="h">Education</div>
-        <div class="edu-row"><b>MSc, Management in Conservation &amp; Biological Resources</b><span>AUTh · 2022</span></div>
-        <div class="edu-row"><b>BA &amp; Integrated MSc, Economics of Agriculture</b><span>AUTh · 2013</span></div>
-        <div class="edu-row"><b>BA, Graphic Design</b><span>1st IEK Larissa · 2015</span></div>
+    <section class="tile contact reveal" id="contact">
+      <div class="big">Let's make your data make sense.</div>
+      <div class="actions">
+        <a class="btn btn-a" href="mailto:nikoskaramou@gmail.com">Get in touch</a>
+        <a class="btn btn-b" href="Nikos_Karamoustos_CV.pdf" download>↓ Download CV</a>
+        <a class="btn btn-b" href="https://linkedin.com/in/nikoskaramoustos/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-    </div>
+    </section>
+
   </div>
-</section>
 
-<footer id="contact">
-  <div class="wrap">
-    <div class="big">Let's make your data make sense.</div>
-    <p style="color:var(--ink-soft)">Open to remote roles across EU time zones — commercial insights and sustainability work alike.</p>
-    <p style="margin-top:18px;font-size:1.1rem"><a href="mailto:nikoskaramou@gmail.com" class="mail">nikoskaramou@gmail.com</a></p>
-    <div class="foot-links">
-      <a href="https://linkedin.com/in/nikoskaramoustos/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="Nikos_Karamoustos_CV.pdf" download>Download CV ↓</a>
-    </div>
-    <div class="copyright">© 2026 Nikos Karamoustos · Built &amp; designed by me</div>
+  <div class="foot">
+    <span>© 2026 Nikos Karamoustos · designed &amp; built by me</span>
+    <a href="mailto:nikoskaramou@gmail.com">nikoskaramou@gmail.com</a>
   </div>
-</footer>
+
+</div>
+
+<a href="Nikos_Karamoustos_CV.pdf" class="float" download>↓ CV</a>
 
 <script>
   document.documentElement.className='js';
   const els=document.querySelectorAll('.reveal');
   const show=el=>el.classList.add('in');
   if('IntersectionObserver' in window){
-    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.12});
+    const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>show(e.target),i*40);io.unobserve(e.target)}})},{threshold:.1});
     els.forEach(el=>io.observe(el));
-    // safety net: reveal anything still hidden shortly after load
-    window.addEventListener('load',()=>setTimeout(()=>els.forEach(show),800));
+    window.addEventListener('load',()=>setTimeout(()=>els.forEach(show),900));
   } else { els.forEach(show); }
 </script>
 </body>
